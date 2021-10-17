@@ -1,0 +1,43 @@
+PODS:
+  - Alamofire (4.9.1)
+  - CodableAlamofire (1.1.2):
+    - Alamofire (~> 4.0)
+  - PromiseKit (6.15.3):
+    - PromiseKit/CorePromise (= 6.15.3)
+    - PromiseKit/Foundation (= 6.15.3)
+    - PromiseKit/UIKit (= 6.15.3)
+  - PromiseKit/CorePromise (6.15.3)
+  - PromiseKit/Foundation (6.15.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.15.3):
+    - PromiseKit/CorePromise
+  - SDWebImage (5.12.1):
+    - SDWebImage/Core (= 5.12.1)
+  - SDWebImage/Core (5.12.1)
+  - SwiftyJSON (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.9.1)
+  - CodableAlamofire (~> 1.1.2)
+  - PromiseKit
+  - SDWebImage
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CodableAlamofire
+    - PromiseKit
+    - SDWebImage
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  CodableAlamofire: b7adfb2e5e980392014b4b3f3b8b62c01b9de4aa
+  PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
+  SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+
+PODFILE CHECKSUM: 734e719bdde25082ee663b41ea22cce37f5f21e3
+
+COCOAPODS: 1.8.4
