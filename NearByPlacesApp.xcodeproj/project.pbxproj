@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B25ACF4D271C21C500A79E89 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25ACF4C271C21C500A79E89 /* Coordinator.swift */; };
+		B25ACF4F271C21FB00A79E89 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25ACF4E271C21FB00A79E89 /* MainCoordinator.swift */; };
+		B25ACF51271C233B00A79E89 /* StoryboardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25ACF50271C233B00A79E89 /* StoryboardName.swift */; };
 		B2BBB35F271B4A8D001F1681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BBB35E271B4A8D001F1681 /* AppDelegate.swift */; };
 		B2BBB366271B4A8D001F1681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BBB364271B4A8D001F1681 /* Main.storyboard */; };
 		B2BBB368271B4A90001F1681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2BBB367271B4A90001F1681 /* Assets.xcassets */; };
@@ -17,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		1C703517A34FA6E1F7701A86 /* Pods-NearByPlacesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearByPlacesApp.debug.xcconfig"; path = "Target Support Files/Pods-NearByPlacesApp/Pods-NearByPlacesApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B25ACF4C271C21C500A79E89 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B25ACF4E271C21FB00A79E89 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B25ACF50271C233B00A79E89 /* StoryboardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardName.swift; sourceTree = "<group>"; };
 		B2BBB35B271B4A8D001F1681 /* NearByPlacesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearByPlacesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BBB35E271B4A8D001F1681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2BBB365271B4A8D001F1681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,6 +178,9 @@
 		B2BBB37E271B4C37001F1681 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				B25ACF4C271C21C500A79E89 /* Coordinator.swift */,
+				B25ACF4E271C21FB00A79E89 /* MainCoordinator.swift */,
+				B25ACF50271C233B00A79E89 /* StoryboardName.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -292,7 +301,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2BBB35F271B4A8D001F1681 /* AppDelegate.swift in Sources */,
+				B25ACF51271C233B00A79E89 /* StoryboardName.swift in Sources */,
+				B25ACF4F271C21FB00A79E89 /* MainCoordinator.swift in Sources */,
 				B2BBB37D271B4C26001F1681 /* HomeViewController.swift in Sources */,
+				B25ACF4D271C21C500A79E89 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +459,6 @@
 				INFOPLIST_FILE = NearByPlacesApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -477,7 +488,6 @@
 				INFOPLIST_FILE = NearByPlacesApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
