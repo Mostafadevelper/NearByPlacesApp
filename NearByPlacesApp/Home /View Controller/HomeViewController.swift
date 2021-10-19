@@ -10,10 +10,10 @@ import UIKit
 class HomeViewController: UIViewController {
 
     //MARK:- Layout:-
+    @IBOutlet weak var titleLB: UILabel!
     @IBOutlet weak var realTimeBTN: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var errorView: UIView!
-    @IBOutlet weak var empryLocationView: UIView!
+    @IBOutlet weak var alertView: AlertView!
 
     //MARK:- Variable & Constants:
     lazy var viewModel: HomeViewModel  = {
@@ -25,12 +25,16 @@ class HomeViewController: UIViewController {
     //MARK:- Life Cycle:-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadFonts()
         setupTableView()
         setupViewModel()
     }
    
-    
+    private func loadFonts(){
+        titleLB.font = UIFont.fonts(name: .bold, size: .size_2xl)
+        print(FontSize.size_m.size)
+        self.realTimeBTN.titleLabel?.font = UIFont.fonts(name: .regular, size: .size_l)
+    }
 
     //MARK:- To change between 2 mode 'Real Time' and 'Single Update'
     @IBAction func realTimeAction(_ sender: Any) {
@@ -54,10 +58,11 @@ extension HomeViewController {
 
         viewModel.error = { [weak self] error in
             guard !error.isEmpty else {
-                self?.errorView.isHidden = true
+                self?.alertView.isHidden = true
                 return
             }
-            self?.errorView.isHidden = false
+            self?.alertView.loadAlert( .error)
+            self?.alertView.isHidden = false
         }
         
         viewModel.loading = { isLoading in
@@ -76,10 +81,11 @@ extension HomeViewController {
         }
         viewModel.locationsList = { [weak self] list in
             guard !list.isEmpty else {
-                self?.empryLocationView.isHidden = false
+                self?.alertView.loadAlert( .empty)
+                self?.alertView.isHidden = false
                 return
             }
-            self?.empryLocationView.isHidden = true
+            self?.alertView.isHidden = true
             self?.tableView.reloadData()
         }
         
@@ -120,6 +126,7 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80
+        if (UIDevice.current.userInterfaceIdiom == .pad) { return 120 }
+        return 80
     }
 }

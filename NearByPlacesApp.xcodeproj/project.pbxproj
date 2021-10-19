@@ -17,6 +17,10 @@
 		B25ACF5B271C25BD00A79E89 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25ACF5A271C25BD00A79E89 /* Requestable.swift */; };
 		B25ACF5D271C25E900A79E89 /* RequestParamters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25ACF5C271C25E900A79E89 /* RequestParamters.swift */; };
 		B25ACF5F271C260D00A79E89 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25ACF5E271C260D00A79E89 /* ServiceManager.swift */; };
+		B27B36A7271ECB6C00F6C009 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B36A6271ECB6C00F6C009 /* Font.swift */; };
+		B27B36AF271EDCE800F6C009 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B36AD271EDCE800F6C009 /* AlertView.swift */; };
+		B27B36B0271EDCE800F6C009 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27B36AE271EDCE800F6C009 /* AlertView.xib */; };
+		B27B36B2271EDE2200F6C009 /* UIView+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B36B1271EDE2200F6C009 /* UIView+EX.swift */; };
 		B27F7587271C286A00C9BFD3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F7586271C286A00C9BFD3 /* Colors.swift */; };
 		B27F7589271C2F8900C9BFD3 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F7588271C2F8900C9BFD3 /* DesignSystem.swift */; };
 		B27F758C271C346700C9BFD3 /* TableView+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F758B271C346700C9BFD3 /* TableView+EX.swift */; };
@@ -52,6 +56,10 @@
 		B25ACF5A271C25BD00A79E89 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		B25ACF5C271C25E900A79E89 /* RequestParamters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParamters.swift; sourceTree = "<group>"; };
 		B25ACF5E271C260D00A79E89 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		B27B36A6271ECB6C00F6C009 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		B27B36AD271EDCE800F6C009 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		B27B36AE271EDCE800F6C009 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		B27B36B1271EDE2200F6C009 /* UIView+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+EX.swift"; sourceTree = "<group>"; };
 		B27F7586271C286A00C9BFD3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B27F7588271C2F8900C9BFD3 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		B27F758B271C346700C9BFD3 /* TableView+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+EX.swift"; sourceTree = "<group>"; };
@@ -105,6 +113,23 @@
 				C80B35EB64CE3936BB7A61C4 /* Pods_NearByPlacesApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B27B36A5271ECB4F00F6C009 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B27B36A6271ECB6C00F6C009 /* Font.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B27B36A8271EDAD300F6C009 /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				B27B36AD271EDCE800F6C009 /* AlertView.swift */,
+				B27B36AE271EDCE800F6C009 /* AlertView.xib */,
+			);
+			path = "Custom View";
 			sourceTree = "<group>";
 		};
 		B27F758A271C344C00C9BFD3 /* Helper */ = {
@@ -178,6 +203,7 @@
 		B2BBB373271B4B2D001F1681 /* Design System */ = {
 			isa = PBXGroup;
 			children = (
+				B27B36A5271ECB4F00F6C009 /* Fonts */,
 				B2BBB37A271B4BD5001F1681 /* Colors */,
 				B2BBB367271B4A90001F1681 /* Assets.xcassets */,
 				B27F7588271C2F8900C9BFD3 /* DesignSystem.swift */,
@@ -199,6 +225,7 @@
 		B2BBB375271B4B5A001F1681 /* View  */ = {
 			isa = PBXGroup;
 			children = (
+				B27B36A8271EDAD300F6C009 /* Custom View */,
 				B27F758D271C349B00C9BFD3 /* Table Cell */,
 				B2BBB379271B4B89001F1681 /* StoryBoard */,
 			);
@@ -279,6 +306,7 @@
 				B27F7594271C5B5D00C9BFD3 /* UIApplication+EX.swift */,
 				B27F7596271C5B9700C9BFD3 /* UIViewController+EX.swift */,
 				B2C0B537271DAC18001DF837 /* UIImageView+EX.swift.swift */,
+				B27B36B1271EDE2200F6C009 /* UIView+EX.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -344,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2BBB36B271B4A90001F1681 /* LaunchScreen.storyboard in Resources */,
+				B27B36B0271EDCE800F6C009 /* AlertView.xib in Resources */,
 				B2BBB368271B4A90001F1681 /* Assets.xcassets in Resources */,
 				B2BBB366271B4A8D001F1681 /* Main.storyboard in Resources */,
 				B27F7591271C34B500C9BFD3 /* HomeTableCell.xib in Resources */,
@@ -410,6 +439,7 @@
 				B27F7589271C2F8900C9BFD3 /* DesignSystem.swift in Sources */,
 				B2C0B53A271DB7F2001DF837 /* PhotosResponse.swift in Sources */,
 				B25ACF59271C25A000A79E89 /* AlamofireRequestExtensions.swift in Sources */,
+				B27B36AF271EDCE800F6C009 /* AlertView.swift in Sources */,
 				B2BBB35F271B4A8D001F1681 /* AppDelegate.swift in Sources */,
 				B27F75A0271C60FC00C9BFD3 /* HomeCellViewModel.swift in Sources */,
 				B25ACF5B271C25BD00A79E89 /* Requestable.swift in Sources */,
@@ -422,9 +452,11 @@
 				B27F7595271C5B5D00C9BFD3 /* UIApplication+EX.swift in Sources */,
 				B2BBB37D271B4C26001F1681 /* HomeViewController.swift in Sources */,
 				B25ACF4D271C21C500A79E89 /* Coordinator.swift in Sources */,
+				B27B36A7271ECB6C00F6C009 /* Font.swift in Sources */,
 				B25ACF5F271C260D00A79E89 /* ServiceManager.swift in Sources */,
 				B27F7590271C34B500C9BFD3 /* HomeTableCell.swift in Sources */,
 				B27F759C271C5DD600C9BFD3 /* HomeApi.swift in Sources */,
+				B27B36B2271EDE2200F6C009 /* UIView+EX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

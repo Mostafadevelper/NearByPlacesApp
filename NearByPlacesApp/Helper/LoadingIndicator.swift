@@ -33,13 +33,14 @@ class LoadingIndicator: UIView {
     
     func show(for view: UIView)  {
         
+        let sizeOfIndicator = view.bounds.size.width / 6.9
         indicator.startAnimating()
         view.addSubview(indicator)
 //        indicator.frame = CGRect(x: view.center.x, y: view.center.y, width: 60, height: 60)
         indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
         indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        indicator.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        indicator.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        indicator.widthAnchor.constraint(equalToConstant: sizeOfIndicator).isActive = true
+        indicator.heightAnchor.constraint(equalToConstant: sizeOfIndicator).isActive = true
         indicator.bringSubviewToFront(view)
     }
         

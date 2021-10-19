@@ -46,8 +46,8 @@ class HomeViewModel {
             case .singleUpdate:
                 self?.modeAction?(mode.rawValue)
             }
-            self?.fetchData(lat: (location?.coordinate.latitude)!, long: (location?.coordinate.longitude)!)
-            //            self?.fetchData()
+//            self?.fetchData(lat: (location?.coordinate.latitude)!, long: (location?.coordinate.longitude)!)
+                        self?.fetchData()
         })
     }
     
@@ -106,7 +106,7 @@ class HomeViewModel {
         self.cellViewModels = list
         
         self.locationsList(self.cellViewModels)
-        fetchPhotoOfVenuoWithId()
+//        fetchPhotoOfVenuoWithId()
     }
     
     private func createCellViewModel(at result: Venue) -> HomeCellViewModel {
@@ -128,6 +128,5 @@ class HomeViewModel {
         self.fetchLocations(self.operatorMode)
         return operatorMode.rawValue
     }
-    
     
 }
