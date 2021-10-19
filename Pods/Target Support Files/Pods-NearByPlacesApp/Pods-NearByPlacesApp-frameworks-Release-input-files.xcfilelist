@@ -3,4 +3,5 @@ ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework
 ${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

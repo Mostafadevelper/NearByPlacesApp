@@ -8,9 +8,10 @@ target 'NearByPlacesApp' do
 
   pod 'Alamofire', '~> 4.9.1'
   pod 'CodableAlamofire', '~> 1.1.2'
- pod 'CodableAlamofire', '~> 1.1.2'
+  pod 'CodableAlamofire', '~> 1.1.2'
   pod 'SwiftyJSON'
   pod 'PromiseKit'
+  pod 'SwiftyBeaver', '~> 1.8.4'
 
   pod 'SDWebImage'
 

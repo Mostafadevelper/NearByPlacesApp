@@ -14,6 +14,7 @@ PODS:
   - SDWebImage (5.12.1):
     - SDWebImage/Core (= 5.12.1)
   - SDWebImage/Core (5.12.1)
+  - SwiftyBeaver (1.8.4)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - CodableAlamofire (~> 1.1.2)
   - PromiseKit
   - SDWebImage
+  - SwiftyBeaver (~> 1.8.4)
   - SwiftyJSON
 
 SPEC REPOS:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - CodableAlamofire
     - PromiseKit
     - SDWebImage
+    - SwiftyBeaver
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -36,8 +39,9 @@ SPEC CHECKSUMS:
   CodableAlamofire: b7adfb2e5e980392014b4b3f3b8b62c01b9de4aa
   PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
+  SwiftyBeaver: f9a9aba96a6a6166e21682377804d728b0d20b95
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 734e719bdde25082ee663b41ea22cce37f5f21e3
+PODFILE CHECKSUM: b9462605cb7dc94e0226818ee81bf654a5ce6adf
 
 COCOAPODS: 1.8.4
