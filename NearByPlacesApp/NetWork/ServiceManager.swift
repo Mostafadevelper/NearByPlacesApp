@@ -16,7 +16,6 @@ class ServiceManager {
 
     var manager: Alamofire.SessionManager
     var requestsDictionary: [String: [DataRequest]]!
-//    var configration: URLSessionConfiguration = URLSessionConfiguration.default
     private init() {
         // manager
         manager = Alamofire.SessionManager(configuration: URLSessionConfiguration.default)

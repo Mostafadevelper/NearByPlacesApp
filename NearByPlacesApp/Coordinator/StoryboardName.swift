@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct StoryboardName {
     
     private init(){}

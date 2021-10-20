@@ -25,5 +25,4 @@ extension UIImageView {
             self.image = UIImage(named: "defaultIMG")
         }
     }
-
 }

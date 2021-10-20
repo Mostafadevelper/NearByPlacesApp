@@ -7,30 +7,15 @@
 
 import Foundation
 
-
-
 struct NearLocationsResponse: Codable {
     
-    let meta: Meta?
     let response: VenuesResponse?
-
-    enum CodingKeys: String, CodingKey {
-            case meta = "meta"
-            case response = "response"
-    }
-
-}
-
-struct Meta : Codable {
-    
-    let code : Int?
-    let requestId : String?
     
     enum CodingKeys: String, CodingKey {
-        case code = "code"
-        case requestId = "requestId"
+        case response = "response"
     }
 }
+
 
 struct VenuesResponse: Codable {
     

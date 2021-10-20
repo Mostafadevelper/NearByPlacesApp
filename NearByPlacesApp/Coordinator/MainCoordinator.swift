@@ -11,7 +11,7 @@ class MainCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator] = [Coordinator]()
     var naviagtionController: UINavigationController
-
+    
     func start() {
         let homeVC = HomeViewController.instatiate(StoryboardName.main)
         self.naviagtionController.pushViewController(homeVC, animated: false)
@@ -21,6 +21,5 @@ class MainCoordinator: Coordinator {
         self.naviagtionController = naviagtionController
         self.naviagtionController.navigationBar.isHidden = true
     }
-    
     
 }

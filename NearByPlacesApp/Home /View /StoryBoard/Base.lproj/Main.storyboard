@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -15,27 +15,27 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="NearByPlacesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twY-ai-Te1">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="165"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="45.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWO-kN-E1K">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="86"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="667" height="13.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Near By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inN-OW-mv1">
-                                        <rect key="frame" x="476" y="86" width="72" height="27.5"/>
+                                        <rect key="frame" x="297.5" y="13.5" width="72" height="28"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" name="primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmH-g2-lUy">
-                                        <rect key="frame" x="900" y="83.5" width="102" height="32"/>
+                                        <rect key="frame" x="578" y="11.5" width="67" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Single Update">
+                                        <state key="normal" title="RealTime">
                                             <color key="titleColor" name="primary"/>
                                         </state>
                                         <connections>
@@ -43,7 +43,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qf6-BN-IbQ" userLabel="line view">
-                                        <rect key="frame" x="0.0" y="164" width="1024" height="1"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="667" height="1"/>
                                         <color key="backgroundColor" name="darkLine"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="V6x-cM-NIA"/>
@@ -56,7 +56,10 @@
                                     <constraint firstAttribute="bottom" secondItem="Qf6-BN-IbQ" secondAttribute="bottom" id="8YT-DV-YIg"/>
                                     <constraint firstItem="pWO-kN-E1K" firstAttribute="top" secondItem="twY-ai-Te1" secondAttribute="top" id="9ov-pO-yee"/>
                                     <constraint firstItem="Qf6-BN-IbQ" firstAttribute="leading" secondItem="twY-ai-Te1" secondAttribute="leading" id="J9t-DN-UNd"/>
-                                    <constraint firstItem="pWO-kN-E1K" firstAttribute="height" secondItem="twY-ai-Te1" secondAttribute="height" multiplier="0.520408" id="RM0-G7-xPg"/>
+                                    <constraint firstItem="pWO-kN-E1K" firstAttribute="height" secondItem="twY-ai-Te1" secondAttribute="height" multiplier="0.520408" id="RM0-G7-xPg">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="-10"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="-10"/>
+                                    </constraint>
                                     <constraint firstItem="pWO-kN-E1K" firstAttribute="leading" secondItem="twY-ai-Te1" secondAttribute="leading" id="V2X-vZ-BeN"/>
                                     <constraint firstItem="inN-OW-mv1" firstAttribute="centerX" secondItem="twY-ai-Te1" secondAttribute="centerX" id="V9f-Fl-Ljq"/>
                                     <constraint firstItem="jmH-g2-lUy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="inN-OW-mv1" secondAttribute="trailing" constant="8" symbolic="YES" id="ZbM-Wh-Z5n"/>
@@ -67,7 +70,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U3-JJ-Wym">
-                                <rect key="frame" x="0.0" y="165" width="1024" height="1201"/>
+                                <rect key="frame" x="0.0" y="45.5" width="667" height="329.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="BNq-BV-fNc"/>
@@ -75,7 +78,7 @@
                                 </connections>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IX8-Hf-MaW" customClass="AlertView" customModule="NearByPlacesApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="165" width="1024" height="1201"/>
+                                <rect key="frame" x="0.0" y="45.5" width="667" height="329.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -93,7 +96,9 @@
                             <constraint firstItem="0U3-JJ-Wym" firstAttribute="top" secondItem="twY-ai-Te1" secondAttribute="bottom" id="Rlu-Wc-e2t"/>
                             <constraint firstItem="twY-ai-Te1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Wp4-sQ-6ku"/>
                             <constraint firstAttribute="bottom" secondItem="0U3-JJ-Wym" secondAttribute="bottom" id="kYe-mt-gev"/>
-                            <constraint firstItem="twY-ai-Te1" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.12069" id="wqc-FK-pMi"/>
+                            <constraint firstItem="twY-ai-Te1" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.12069" id="wqc-FK-pMi">
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <connections>

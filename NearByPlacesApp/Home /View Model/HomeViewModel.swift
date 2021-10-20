@@ -12,8 +12,6 @@ enum OperationalMode: String {
     case singleUpdate = "Single Update"
 }
 
-//typealias Action = (Any) -> ()
-
 class HomeViewModel {
     
     //MARK:- Variable & Constants:-
@@ -23,79 +21,49 @@ class HomeViewModel {
     var locationsList :(([HomeCellViewModel])->())!
     var loading :((Bool) ->())!
     var error: ((String)-> ())!
-    var modeAction: ((String)-> ())!
-    //    var loading :Action!
-    //    var error: Action!
-    //    var modeAction: Action!
-    
-    var operatorMode: OperationalMode = .singleUpdate
+    private var operatorMode: OperationalMode = .realTime
     var isFetch = false
-    private var coordinate: String = ""
     var isRefresh: ((Bool) -> ())!
     
-    
-    func fetchLocations(_ mode: OperationalMode = .singleUpdate){
+    //MARK:- To Get Current Location Of Users
+    func fetchLocations(_ mode: OperationalMode = AppUpdateStatus.getCurrentUpdateType()){
         
         self.operatorMode = mode
-        LocationTracker.shared?.locateMeOnLocationChange(callback: { [weak self] location, _ in
+        LocationTracker.shared().locateMeOnLocationChange(callback: { [weak self] location in
             guard location != nil else {
                 return }
             switch mode {
-            case .realTime:
-                self?.modeAction?(mode.rawValue)
             case .singleUpdate:
-                self?.modeAction?(mode.rawValue)
+                LocationTracker.stopUpdateing()
+            default:
+                break
             }
-//            self?.fetchData(lat: (location?.coordinate.latitude)!, long: (location?.coordinate.longitude)!)
-                        self?.fetchData()
+            self?.fetchData(lat: (location?.coordinate.latitude)!, long: (location?.coordinate.longitude)!)
         })
     }
     
     //MARK:- NetWork
-    func fetchData(lat: Double = 40.7099 , long: Double = -73.9622){
-        if !isFetch {  self.loading?(true) }
-        homeApi.getLocationsList(lat: lat, long: long).get { [weak self] responseData in
-            guard self != nil else { return }
-            self?.loading(false)
-            self?.isRefresh(false)
-            self?.isFetch = false
-            self?.processFetchedResult(result: responseData.response?.venues ?? [])
-        }.catch { error in
+   private func fetchData(lat: Double = 40.7099 , long: Double = -73.9622){
+        if !isFetch { self.loading?(true) }
+        homeApi
+            .getLocationsList(
+                lat: lat,
+                long: long
+            ).get { [weak self] responseData in
+            guard let self = self else { return }
             self.loading(false)
             self.isRefresh(false)
-            self.error(error.message)
+            self.isFetch = false
+            self.processFetchedResult(result: responseData.response?.venues ?? [])
+        }.catch { [weak self] error in
+            guard let self = self else { return }
+            self.loading(false)
+            self.isRefresh(false)
+            self.error(error.localizedDescription)
         }
     }
     
-    func fetchPhotoOfVenuoWithId() {
-        
-        //        for (index , location) in nearLocations.enumerated() {
-        //            homeApi.getPhotosWithVenue(location.id ?? "").get { response in
-        //                self.updatePhotes(photto: response.response?.photos?.items ?? [] , index: index)
-        //            }.catch { error in
-        //                print(error)
-        //            }
-        //        }
-        
-        homeApi.getPhotosWithVenue(nearLocations.first?.id ?? "").get { response in
-            self.updatePhotes(photto: response.response?.photos?.items ?? [] , index: 0)
-        }.catch { error in
-            print(error)
-        }
-    }
-    
-    func updatePhotes(photto: [Items] , index: Int) {
-        
-        let prefix = photto.first?.prefix ?? ""
-        let imageSize = "\(photto.first?.width ?? 100 )x\(photto.first?.height ?? 100)"
-        let suffix = photto.first?.suffix ?? ""
-        self.cellViewModels[index].imageUrl = prefix + imageSize + suffix
-        
-        print("=============================================================")
-        print(cellViewModels[index].imageUrl)
-        self.locationsList(self.cellViewModels)
-    }
-    
+    //MARK:- Setup Cell View Model
     private func processFetchedResult(result : [Venue]) {
         
         self.nearLocations = result
@@ -106,25 +74,24 @@ class HomeViewModel {
         self.cellViewModels = list
         
         self.locationsList(self.cellViewModels)
-//        fetchPhotoOfVenuoWithId()
     }
     
+    //MARK:- Create Cell View Model
     private func createCellViewModel(at result: Venue) -> HomeCellViewModel {
         
-        return HomeCellViewModel(
-            name: result.name ?? "",
-            imageUrl: "imageURl",
-            formattedAddress: result.location?.formattedAddress?.first ?? "")
+        HomeCellViewModel(id: result.id, name: result.name, formattedAddress: result.location?.formattedAddress?.first, imageUrl: nil)
     }
     
     //MARK:- To Switch between location mode
     func switchBetweenMode() -> String {
-        guard operatorMode != .singleUpdate else {
+        guard operatorMode == .realTime else {
             self.operatorMode = .realTime
+            AppUpdateStatus.setCurrentUpdateType(operatorMode)
             self.fetchLocations(self.operatorMode)
             return operatorMode.rawValue
         }
         self.operatorMode = .singleUpdate
+        AppUpdateStatus.setCurrentUpdateType(operatorMode)
         self.fetchLocations(self.operatorMode)
         return operatorMode.rawValue
     }

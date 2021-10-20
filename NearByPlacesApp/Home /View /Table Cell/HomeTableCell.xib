@@ -18,10 +18,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JmH-9y-cTF">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JmH-9y-cTF">
                         <rect key="frame" x="10" y="10" width="80" height="60"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="JmH-9y-cTF" secondAttribute="height" multiplier="4:3" id="9Mp-bp-tFX"/>
+                            <constraint firstAttribute="width" constant="80" id="hRN-a8-LSq">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eCt-q0-uMy">
@@ -55,9 +57,6 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <constraints>
-                <constraint firstItem="JmH-9y-cTF" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.213333" id="62p-hq-7Rf"/>
-            </constraints>
             <connections>
                 <outlet property="formattedAddressLB" destination="ELL-eq-bKw" id="Oly-ef-0GJ"/>
                 <outlet property="iconIMG" destination="JmH-9y-cTF" id="YIE-uo-6zG"/>

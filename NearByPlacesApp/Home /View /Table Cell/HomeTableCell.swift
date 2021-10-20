@@ -9,6 +9,11 @@ import UIKit
 
 class HomeTableCell: UITableViewCell {
     
+    //MARK:- Varibale
+    lazy private var viewModel: HomeCellViewModel  = {
+        return HomeCellViewModel()
+    }()
+
     //MARK:- Layout:-
     @IBOutlet weak var nameLB: UILabel!
     @IBOutlet weak var formattedAddressLB: UILabel!
@@ -18,14 +23,13 @@ class HomeTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         loadFonts()
+        bind()
     }
     
     //MARK:- View Model Home cell
     var listCellViewModel: HomeCellViewModel? {
         didSet {
-            iconIMG.loadImage(urlName: listCellViewModel?.imageUrl)
-            nameLB.text = listCellViewModel?.name
-            formattedAddressLB.text = listCellViewModel?.formattedAddress
+            self.setup()
         }
     }
     
@@ -35,4 +39,27 @@ class HomeTableCell: UITableViewCell {
         self.formattedAddressLB.font = UIFont.fonts(name: .regular, size: .size_m)
     }
     
+}
+
+//MARK:- Network:-
+extension HomeTableCell {
+    
+    //MARK:- Setup & Load Data
+   fileprivate func setup(){
+       iconIMG.loadImage(urlName: listCellViewModel?.imageUrl)
+       nameLB.text = listCellViewModel?.name
+       formattedAddressLB.text = listCellViewModel?.formattedAddress
+       if listCellViewModel?.imageUrl == nil {
+       viewModel.fetchPhotoOfVenuoWithId(listCellViewModel?.id)
+       }
+    }
+    
+    //MARK:- To Bind Changes From APi
+    func bind(){
+        viewModel.updateLocation = { [weak self] image in
+            guard let self = self else {return}
+            self.listCellViewModel?.imageUrl = image
+            self.iconIMG.loadImage(urlName:  self.listCellViewModel?.imageUrl )
+        }
+    }
 }

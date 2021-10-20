@@ -14,15 +14,14 @@ protocol RequestParamters: Codable {
 extension RequestParamters {
     func getParamsAsJson() -> [String: Any] {
         let jsonEncoder = JSONEncoder()
-
+        
         guard let jsonData = try? jsonEncoder.encode(self) else {
             return [:]
         }
         guard let dictionary = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: Any] else {
             return [:]
         }
-
-        print(dictionary)
+        
         return dictionary
     }
 }

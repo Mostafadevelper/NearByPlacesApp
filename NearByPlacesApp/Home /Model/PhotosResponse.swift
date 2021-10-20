@@ -12,7 +12,6 @@ struct PhotosResponse: Codable {
     enum CodingKeys: String, CodingKey {
         case response = "response"
     }
-    
 }
 
 
@@ -32,7 +31,6 @@ struct Photos: Codable {
     enum CodingKeys: String, CodingKey {
         case items
     }
-    
 }
 
 struct Items: Codable {
@@ -48,6 +46,5 @@ struct Items: Codable {
         case width
         case height
     }
-    
 }
 

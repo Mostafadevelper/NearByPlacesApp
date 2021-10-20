@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 extension UIApplication {
     
     class func getTopViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {

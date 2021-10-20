@@ -41,27 +41,22 @@ class HomeApi: Api {
             return true
         }
         
-        var header: [String : String]? {
-            return nil
-        }
-        
         var parameters: Parameters? {
             switch self {
             case let .getLocation(_, lat, long):
                 return [
-                    "client_id":"4V5SLNWK2XWSOZKPTHEOOJR3VQAPQNKZHD1RZX3IBLRF4YGU" ,
-                    "client_secret": "IYQ5QF4KR24NLJNAZLZCQRT3OIZJU1WVNNE4MBJJL4WVNBM3" ,
-                    "v" : "20211017" ,
-                    "ll" : "\(lat),\(long)"]
+                    "client_id": Keys.client_id ,
+                    "client_secret": Keys.client_secret ,
+                    "v": Keys.date ,
+                    "ll": "\(lat),\(long)"]
             case .getPhoto:
                 return [
-                    "client_id": "4V5SLNWK2XWSOZKPTHEOOJR3VQAPQNKZHD1RZX3IBLRF4YGU",
-                    "client_secret": "IYQ5QF4KR24NLJNAZLZCQRT3OIZJU1WVNNE4MBJJL4WVNBM3",
-                    "v" : "20211017" ,
-                    "group": "venue"]
+                    "client_id": Keys.client_id,
+                    "client_secret": Keys.client_secret,
+                    "v": Keys.date ,
+                    "group": Keys.group]
             }
         }
-        
     }
 }
 

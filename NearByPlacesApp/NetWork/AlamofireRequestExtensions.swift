@@ -45,20 +45,6 @@ public extension Alamofire.DataRequest {
 
                 let error = NSError(domain: "html", code: -999, userInfo: ["html": data, NSLocalizedDescriptionKey: "somethingWentWrong"])
                 result = .failure(error)
-            } else if let message = (jsonData["message"] as? String ?? jsonData["status"] as? String) {
-                // Handle general errors
-                // create the error object
-                let title = jsonData["title"] as? String ?? "Something went wrong"
-
-                if let domain = jsonData["status"] {
-                    let error = CustomError(code: "\(domain)", message: message, title: title)
-
-                    // log error
-                    self?.log(code: code, url: requestURL, message: jsonData as AnyObject, isError: true, request: request)
-
-                    // return failure
-                    result = .failure(error)
-                }
             } else {
                 self?.log(code: code, url: requestURL, message: jsonData as AnyObject, isError: false, request: request)
                 result = .success

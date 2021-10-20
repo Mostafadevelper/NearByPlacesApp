@@ -22,5 +22,4 @@ extension UIViewController {
         let storyboard = UIStoryboard(name:storyboardName , bundle: Bundle.main)
         return storyboard.instantiateViewController(withIdentifier: id) as! Self
     }
-
 }

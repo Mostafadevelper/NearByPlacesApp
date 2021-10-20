@@ -18,7 +18,7 @@ class AlertView: UIView {
     //MARK:- Layout:-
     @IBOutlet private weak var iconIMG: UIImageView!
     @IBOutlet private weak var messageLB: UILabel!
-   
+    
     //MARK:- Init Func
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -27,23 +27,11 @@ class AlertView: UIView {
         loadFonts()
     }
     
-    //MARK:- To Load The View :-
-//    func instanceFromNib() -> UIView {
-//        let bundle  = Bundle.init(for: type(of: self))
-//        let nib = UINib(nibName: "AlertView" , bundle: bundle)
-//        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
-//        view.frame = bounds
-//        view.autoresizingMask = [.flexibleHeight , .flexibleWidth ]
-//        addSubview(view)
-//        return view
-//    }
-    
-    
 }
 
 extension AlertView {
     
-  private  func loadFonts(){
+    private func loadFonts(){
         self.messageLB.font = UIFont.fonts(name: .regular, size: .size_xl)
     }
     
