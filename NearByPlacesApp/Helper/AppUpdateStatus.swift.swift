@@ -9,10 +9,9 @@ import Foundation
 
 class AppUpdateStatus {
     
-    
     class func getCurrentUpdateType() -> OperationalMode {
         let defaults =  UserDefaults.standard
-        let value = defaults.object(forKey: "SaveAppMode1") as! String
+        let value = defaults.object(forKey: "SaveAppMode1") as? String
         switch value {
         case "RealTime":
             return OperationalMode.realTime

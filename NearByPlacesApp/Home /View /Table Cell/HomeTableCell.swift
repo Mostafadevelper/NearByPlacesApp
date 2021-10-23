@@ -58,6 +58,8 @@ extension HomeTableCell {
     func bind(){
         viewModel.updateLocation = { [weak self] image in
             guard let self = self else {return}
+            print("=======================")
+            print(image)
             self.listCellViewModel?.imageUrl = image
             self.iconIMG.loadImage(urlName:  self.listCellViewModel?.imageUrl )
         }

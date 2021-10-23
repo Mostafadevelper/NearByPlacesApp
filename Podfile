@@ -12,7 +12,6 @@ target 'NearByPlacesApp' do
   pod 'SwiftyJSON'
   pod 'PromiseKit'
   pod 'SwiftyBeaver', '~> 1.8.4'
-
   pod 'SDWebImage'
 
 

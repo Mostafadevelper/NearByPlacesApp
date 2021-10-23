@@ -112,7 +112,13 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue() as HomeTableCell
-            cell.listCellViewModel = viewModel.cellViewModels[indexPath.row]
+//        if indexPath.row == 0 || indexPath.row == 10 {
+        cell.listCellViewModel = viewModel.cellViewModels[indexPath.row]
+//        }else {
+//            cell.iconIMG.loadImage(urlName: "")
+//            cell.nameLB.text = viewModel.cellViewModels[indexPath.row].name
+//            cell.formattedAddressLB.text = viewModel.cellViewModels[indexPath.row].formattedAddress
+//        }
         return cell
     }
     
