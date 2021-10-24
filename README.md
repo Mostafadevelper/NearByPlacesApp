@@ -1,7 +1,7 @@
 
 # NearMe Locations iOS App
 
-App display information about nearby places around user using user’s current location specified by Latitude and Longitude
+App uses **Foursquare API** to display information about nearby places around user using user’s current location specified by Latitude and Longitude
 
 ## Implemented Using
 
@@ -16,7 +16,7 @@ App display information about nearby places around user using user’s current l
 * Size Classes &  Adaptive Layout 
  
 ## Review Demo Video
- [![Video Demo](https://github.com/Mostafadevelper/NearByPlacesApp/NearByPlacesApp/Helper/homePage.png)](https://www.youtube.com/watch?v=HniLJ0w85qQ)
+[![VideoDemo](https://github.com/Mostafadevelper/NearByPlacesApp/blob/main/NearByPlacesApp/Helper/homePage.png)](https://www.youtube.com/watch?v=HniLJ0w85qQ)
  
 ## App Features
 
