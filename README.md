@@ -16,7 +16,10 @@ App uses **Foursquare API** to display information about nearby places around us
 * Size Classes &  Adaptive Layout 
  
 ## Review Demo Video
-[![VideoDemo](https://github.com/Mostafadevelper/NearByPlacesApp/blob/main/NearByPlacesApp/Helper/homePage.png)](https://www.youtube.com/watch?v=HniLJ0w85qQ)
+[<img src="https://github.com/Mostafadevelper/NearByPlacesApp/blob/main/NearByPlacesApp/Helper/homePage.png" width="375" height="667">
+](https://www.youtube.com/watch?v=HniLJ0w85qQ)
+
+
  
 ## App Features
 
